@@ -35,29 +35,3 @@ class Whatsappscreen extends StatelessWidget {
     );
   }
 }
-
-// ignore: must_be_immutable
-class Whatsappscreen extends StatefulWidget {
-  String dropdownValue = 'one';
-  @override
-  Widget build(BuildContext context) {
-    return DropdownButton<String>(
-      value: dropdownValue,
-      icon: const Icon(Icons.arrow_drop_down_circle),
-      iconSize: 24,
-      elevation: 12,
-      onChanged: (String? newValue) {
-        setState(() {
-          dropdownValue = newValue!;
-        });
-      },
-      items: <String>['New Group', 'New Broadcast', 'Whatsapp Web', 'Settings']
-          .map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
-    );
-  }
-}
